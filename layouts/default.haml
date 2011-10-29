@@ -27,15 +27,7 @@
 
       = content_for :head
   %body
-    .topbar
-      .fill
-        .container
-          %a.brand{:href => "#"} Project name
-          %ul.nav
-            - {'/' => 'Home', '/' =>'Hero' }.each do |path, label|
-              <li #{current_path == path ? 'class="active"' : ''}>
-              %a{:href => path}= label
     .container
       = yield
       %footer
-        %p © Company 2011
+        %p © Activate Hub 2011

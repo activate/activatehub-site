@@ -1,23 +1,32 @@
-/ Main hero unit for a primary marketing message or call to action
+title: Activate! Hub
+---META
+
+- content_for :head do
+  %script{:type => "text/javascript", :src => "/js/bootstrap-twipsy.js"}
+  %script{:type => "text/javascript", :src => "/js/bootstrap-popover.js"}
+  :javascript
+    $(function () {
+      $("a[rel=popover]")
+        .popover({
+          offset: 10
+        })
+    })
+.logo
+  %img{:src => "/images/web_logo.png", :alt => 'Activation Calendar'}
+
 .hero-unit
-  %h1 Hello, world!
-  %p= lorem.paragraph
-  %p
-    %a.btn.primary.large Learn more »
-/ Example row of columns
-.row
-  .span6
-    %h2 Heading
-    %p= lorem.paragraph
-    %p
-      %a.btn{:href => "#"} View details »
-  .span5
-    %h2 Heading
-    %p= lorem.paragraph
-    %p
-      %a.btn{:href => "#"} View details »
-  .span5
-    %h2 Heading
-    %p= lorem.paragraph
-    %p
-      %a.btn{:href => "#"} View details »
+  %p A calendar of all the Progressive, Educational, Volunteer-Oriented events in your city, filterable by event type, topic and neighborhood.
+  %a.btn.primary.large{:href => 'http://www.activatepdx.org/', :rel=>'popover',  :title=>"Learn more", 'data-content'=>"Visit our blog to find out more about the project"} Learn more »
+  %a.btn.primary.large{:href => 'http://www.activatepdx.org/get_involved', :rel=>'popover',  :title=>"Get involved", 'data-content'=>"Find out how you can get involved in the project."} Get involved »
+
+.row.cities
+  .span-one-third
+    .city
+      %a.btn.large{:href => "http://activatepdx.org/", :rel=>'popover',  :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"} Activate Portland! »
+  .span-one-third
+    .city
+      %a#seattle.btn.large{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."} Activate Seattle! »
+  .span-one-third
+    .city
+      %a.btn.large{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."} Activate San Francisco! »
+
