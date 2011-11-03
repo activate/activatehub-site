@@ -5,4 +5,5 @@ SDIR=`dirname "$0"`
 
 rm -rf $BASE/build
 . ${SDIR}/buildcss
+. ${SDIR}/buildimages
 frank export --production build

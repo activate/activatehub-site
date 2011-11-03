@@ -1,0 +1,8 @@
+#!/bin/sh
+BASE=$PWD
+PRELAUNCH="bay sea"
+cd static/images
+  for city in $PRELAUNCH 
+    do convert logo_${city}_sm.png -colorspace Gray logo_${city}_sm_inactive.png
+  done
+cd $BASE
