@@ -6,27 +6,24 @@ title: Activate! Hub
   %script{:type => "text/javascript", :src => "/js/bootstrap-popover.js"}
   :javascript
     $(function () {
-      $("a[rel=popover]")
+      $(".cities a")
         .popover({
+          placement: "left",
           offset: 10
         })
     })
-.logo
-  %img{:src => "/images/web_logo.png", :alt => 'Activation Calendar'}
+.row
+  .logo.span12
+    %img{:src => "/images/web_logo.png", :alt => 'Activation Calendar'}
+  .cities.span4
+    %a#seattle{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."}
+      %img{:src => "/images/logo_sea_sm_inactive.png", :alt => 'Seattle Calendar', }
+    %a#portland{:href => "http://activatepdx.org/", :rel=>'popover',  :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"} 
+      %img{:src => "/images/logo_pdx_sm.png", :alt => 'Portland Calendar'}
+    %a{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."}
+      %img{:src => "/images/logo_bay_sm_inactive.png", :alt => 'San Francisco Bay Calendar'}
 
 .hero-unit
   %p A calendar of all the Progressive, Educational, Volunteer-Oriented events in your city, filterable by event type, topic and neighborhood.
   %a.btn.primary.large{:href => 'http://www.activatepdx.org/', :rel=>'popover',  :title=>"Learn more", 'data-content'=>"Visit our blog to find out more about the project"} Learn more »
   %a.btn.primary.large{:href => 'http://www.activatepdx.org/get_involved', :rel=>'popover',  :title=>"Get involved", 'data-content'=>"Find out how you can get involved in the project."} Get involved »
-
-.row.cities
-  .span-one-third
-    .city
-      %a.btn.large{:href => "http://activatepdx.org/", :rel=>'popover',  :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"} Activate Portland! »
-  .span-one-third
-    .city
-      %a#seattle.btn.large{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."} Activate Seattle! »
-  .span-one-third
-    .city
-      %a.btn.large{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."} Activate San Francisco! »
-
