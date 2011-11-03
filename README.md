@@ -44,6 +44,8 @@ Get a root login shell
     sudo apt-add-repository ppa:chris-lea/node.js
     sudo apt-get update
     sudo apt-get install nodejs
+    curl http://npmjs.org/install.sh | sh
+    sudo npm -g install less
 
 
 ## Per-Working Copy Setup
