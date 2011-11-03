@@ -2,6 +2,6 @@
 BASE=$PWD
 
 cd static/less
-  mkdir -p $BASE/static
+  mkdir -p $BASE/static/css
   lessc site.less > $BASE/static/css/site.css
 cd $BASE
