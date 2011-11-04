@@ -4,9 +4,11 @@ title: Activate! Hub
 - content_for :head do
   %script{:type => "text/javascript", :src => "/js/bootstrap-twipsy.js"}
   %script{:type => "text/javascript", :src => "/js/bootstrap-popover.js"}
+  -#Ideally, we'd select '.cities a' instead of '.cities img', but the a element's line height is 
+  -#like 18px instead of the height of the image, so the popover gets aligned strangely (not vertically centered)
   :javascript
     $(function () {
-      $(".cities a")
+      $(".cities img")
         .popover({
           placement: "left",
           offset: 10
@@ -21,12 +23,12 @@ title: Activate! Hub
   .logo.span12
     %img{:src => "/images/web_logo.png", :alt => 'Activation Calendar'}
   .cities.span4
-    %a#seattle{:href => "#", :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."}
-      %img{:src => "/images/logo_sea_sm_inactive.png", :alt => 'Seattle Calendar', }
-    %a#portland{:href => "http://activatepdx.org/", :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"} 
-      %img{:src => "/images/logo_pdx_sm.png", :alt => 'Portland Calendar'}
-    %a{:href => "#", :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."}
-      %img{:src => "/images/logo_bay_sm_inactive.png", :alt => 'San Francisco Bay Calendar'}
+    %a#seattle{:href => "#", :title=>"Coming soon"}
+      %img{:src => "/images/logo_sea_sm_inactive.png", :alt => 'Seattle Calendar', :title=>"Coming Soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."}
+    %a#portland{:href => "http://activatepdx.org/", :title=>"Heads up" } 
+      %img{:src => "/images/logo_pdx_sm.png", :alt => 'Portland Calendar', :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"}
+    %a#bay{:href => "#", :title=>"Coming soon"}
+      %img{:src => "/images/logo_bay_sm_inactive.png", :alt => 'San Francisco Bay Calendar', :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."}
 
 .hero-unit.front-hero
   %p A calendar of all the Progressive, Educational, Volunteer-Oriented events in your city, filterable by event type, topic and neighborhood.
