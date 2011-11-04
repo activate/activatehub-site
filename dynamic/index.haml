@@ -11,19 +11,24 @@ title: Activate! Hub
           placement: "left",
           offset: 10
         })
+      $(".front-hero a.btn")
+        .popover({
+          placement: "above",
+          offset: 10
+        })
     })
 .row
   .logo.span12
     %img{:src => "/images/web_logo.png", :alt => 'Activation Calendar'}
   .cities.span4
-    %a#seattle{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."}
+    %a#seattle{:href => "#", :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in Seattle following the Portland pilot."}
       %img{:src => "/images/logo_sea_sm_inactive.png", :alt => 'Seattle Calendar', }
-    %a#portland{:href => "http://activatepdx.org/", :rel=>'popover',  :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"} 
+    %a#portland{:href => "http://activatepdx.org/", :title=>"Heads up", 'data-content'=>"The Portland site is currently in an active pre-alpha. Check out the blog for the latest news!"} 
       %img{:src => "/images/logo_pdx_sm.png", :alt => 'Portland Calendar'}
-    %a{:href => "#", :rel=>'popover', :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."}
+    %a{:href => "#", :disabled=>"disabled", :title=>"Coming soon", 'data-content'=>"We will be launching in San Francisco following the Portland pilot."}
       %img{:src => "/images/logo_bay_sm_inactive.png", :alt => 'San Francisco Bay Calendar'}
 
-.hero-unit
+.hero-unit.front-hero
   %p A calendar of all the Progressive, Educational, Volunteer-Oriented events in your city, filterable by event type, topic and neighborhood.
-  %a.btn.primary.large{:href => 'http://www.activatepdx.org/', :rel=>'popover',  :title=>"Learn more", 'data-content'=>"Visit our blog to find out more about the project"} Learn more »
-  %a.btn.primary.large{:href => 'http://www.activatepdx.org/get_involved', :rel=>'popover',  :title=>"Get involved", 'data-content'=>"Find out how you can get involved in the project."} Get involved »
+  %a.btn.primary.large{:href => 'http://www.activatepdx.org/', :title=>"Learn more", 'data-content'=>"Visit our blog to find out more about the project"} Learn more »
+  %a.btn.primary.large{:href => 'http://www.activatepdx.org/get_involved', :title=>"Get involved", 'data-content'=>"Find out how you can get involved in the project."} Get involved »
